@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background" >
+
+    <ImageView
+        android:id="@+id/iFlippo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/menuflippo" />
+
+    <ImageView
+        android:id="@+id/iFlippos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/flippos" />
+
+    <Button
+        android:id="@+id/bOptions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:text="Options"
+        android:textStyle="italic"
+        android:typeface="sans" />
+
+    <Button
+        android:id="@+id/bGame"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/bOptions"
+        android:layout_alignParentLeft="true"
+        android:text="Start Game"
+        android:textStyle="italic"
+        android:typeface="sans" >
+    </Button>
+
+</RelativeLayout>

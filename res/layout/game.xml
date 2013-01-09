@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background" >
+
+    <ImageButton
+        android:id="@+id/add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/flippo"
+        android:layout_alignTop="@+id/flippo"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="60dp"
+        android:background="@null"
+        android:src="@drawable/ic_action_plus" />
+
+    <ImageButton
+        android:id="@+id/substract"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/flippo"
+        android:layout_alignTop="@+id/flippo"
+        android:layout_marginRight="60dp"
+        android:layout_marginTop="60dp"
+        android:background="@null"
+        android:src="@drawable/ic_action_minus" />
+
+    <ImageButton
+        android:id="@+id/multiply"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/flippo"
+        android:layout_alignLeft="@+id/flippo"
+        android:layout_marginBottom="60dp"
+        android:layout_marginLeft="60dp"
+        android:background="@null"
+        android:src="@drawable/ic_action_multiply" />
+
+    <ImageButton
+        android:id="@+id/divide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/flippo"
+        android:layout_alignRight="@+id/flippo"
+        android:layout_marginBottom="60dp"
+        android:layout_marginRight="60dp"
+        android:background="@null"
+        android:src="@drawable/ic_action_divide" />
+
+    <ImageButton
+        android:id="@+id/b1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/flippo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:background="@null"
+        android:src="@drawable/ic_action_1" />
+
+    <ImageButton
+        android:id="@+id/b2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/flippo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="40dp"
+        android:background="@null"
+        android:src="@drawable/ic_action_1" />
+
+    <ImageButton
+        android:id="@+id/b3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/flippo"
+        android:layout_alignTop="@+id/flippo"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="120dp"
+        android:background="@null"
+        android:src="@drawable/ic_action_1" />
+
+    <ImageButton
+        android:id="@+id/b4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/flippo"
+        android:layout_alignTop="@+id/flippo"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="120dp"
+        android:background="@null"
+        android:src="@drawable/ic_action_1" />
+
+    <ImageView
+        android:id="@+id/flippo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/flippo2" />
+
+    <ImageView
+        android:id="@+id/solution"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/flippo"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/solution" />
+
+    <TextView
+        android:id="@+id/CalcTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/solution"
+        android:layout_centerHorizontal="true"
+        android:textSize="30dp"
+        android:textStyle="italic" />
+
+    <TableLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/CalcTv"
+        android:layout_centerHorizontal="true" >
+
+        <TableRow>
+            <ImageButton
+                android:id="@+id/ibRemove"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:src="@drawable/ic_action_remove" />
+
+            <ImageButton
+                android:id="@+id/ibBracketopen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:src="@drawable/ic_action_bracketopen" />
+
+            <ImageButton
+                android:id="@+id/ibBracketclose"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:src="@drawable/ic_action_bracketclose" />
+
+            <ImageButton
+                android:id="@+id/ibDone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:src="@drawable/ic_action_solve" />
+            />
+        />
+        </TableRow>
+    </TableLayout>
+
+</RelativeLayout>

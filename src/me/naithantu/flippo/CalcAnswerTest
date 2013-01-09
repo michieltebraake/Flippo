@@ -1,0 +1,83 @@
+package me.naithantu.flippo;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class test {
+	static List<String> calculationText = new ArrayList<String>();
+
+	public static void main(String args[]) {
+		calculationText.add("8");
+		calculationText.add("-");
+		calculationText.add("9");
+		calculationText.add("*");
+		calculationText.add("5");
+		calculationText.add("*");
+		calculationText.add("2");
+
+		Calculation calc = new Calculation();
+		List<Integer> usedNumberLocations = new ArrayList<Integer>();
+
+		//calcLocation is the location with the operator. (1,3,5)
+		int calcLocation = 1;
+
+		String calcString = calculationText.get(calcLocation);
+		//Get the proper calculation order, first * and /, then + and -.
+		List<Integer> calcOrder = getCalcOrder(); //3,1,5
+		//Set start total to the first number.
+		calc.setTotal(Integer.parseInt(calculationText.get(calcOrder.get(0) - 1)));
+		usedNumberLocations.add(Integer.parseInt(calculationText.get(calcOrder.get(0) - 1)));
+		System.out.println("Start total: " + calc.getTotal());
+		//Loop through the other numbers and calculate it.
+		int i = 0;
+		while (i < 3) {
+			int operatorLocation = calcOrder.get(i);
+			if (calcOrder.get(i) == -1) {
+				calcString = "+";
+			} else {
+				calcString = calculationText.get(operatorLocation);
+			}
+			int numberToCalculate = Integer.parseInt(calculationText.get(operatorLocation + 1));
+			if (usedNumberLocations.contains(Integer.parseInt(calculationText.get(operatorLocation + 1)))) {
+				numberToCalculate = Integer.parseInt(calculationText.get(operatorLocation - 1));
+			}
+			if (calcString.equalsIgnoreCase("+")) {
+				calc.add(numberToCalculate);
+			} else if (calcString.equalsIgnoreCase("-")) {
+				calc.subtract(numberToCalculate);
+			} else if (calcString.equalsIgnoreCase("*")) {
+				calc.multiply(numberToCalculate);
+			} else if (calcString.equalsIgnoreCase("/")) {
+				calc.divide(numberToCalculate);
+			}
+			usedNumberLocations.add(numberToCalculate);
+			System.out.println("Number: " + numberToCalculate + ". OperatorLocation " + operatorLocation + ". Operator: " + calcString + ". Current total: " + calc.getTotal());
+			i++;
+		}
+		System.out.println("Total: " + calc.getTotal());
+	}
+
+	static List<Integer> getCalcOrder() {
+		//Add divide or multiply locations.
+		List<Integer> calcOrder = new ArrayList<Integer>();
+		int i = 1;
+		while (i <= 5) {
+			if (calculationText.get(i).equalsIgnoreCase("*") || calculationText.get(i).equalsIgnoreCase("*")) {
+				calcOrder.add(i);
+			}
+			i = i + 2;
+		}
+		//Add first number as a + to the list (if you have 3+4*5+0, you would calculate it as +3+4*5+0).
+		//calcOrder.add(-1);
+		//Add add and subtract locations after that.
+		i = 1;
+		while (i <= 5) {
+			if (calculationText.get(i).equalsIgnoreCase("-") || calculationText.get(i).equalsIgnoreCase("+")) {
+				calcOrder.add(i);
+			}
+			i = i + 2;
+		}
+		System.out.println("Calcorder: " + calcOrder);
+		return calcOrder;
+	}
+}
